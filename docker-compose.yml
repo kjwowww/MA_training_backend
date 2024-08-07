@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./uploads:/app/uploads
+    environment:
+      - PORT=3000
+      - ENVIRONMENT=development
+      - DBNAME=backend_ma
+      - URI=mongodb://mongo:27017
+      - PATH=./data
+      - JWT_ALGORITHM=HS256
+      - JWT_SECRET=7636da91bb55646139aea164443d3bbd33cbbe99a3dd99fc3ec745030a15b28c
+      - JWT_SIGNATURE=811af0bb54b92076277cf4a541e3b61b6669540c414bee36e8169c22ff329294
+      - FILE_STORAGE_PATH=/app/uploads
+
+  mongo:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+volumes:
+  mongo-data:

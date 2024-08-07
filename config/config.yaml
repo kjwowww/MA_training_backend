@@ -1,0 +1,49 @@
+port: "3000"  # เปลี่ยนเป็นพอร์ตที่คุณต้องการให้แอปพลิเคชันรัน (ถ้าไม่ใช่ 3000)
+environment: "production"  # เปลี่ยนเป็น "production" ถ้าคุณรันในโหมด production
+dbname: "backend_ma"  # ชื่อของฐานข้อมูล MongoDB ของคุณ
+uri: "mongodb://localhost:27017"  # URI ของ MongoDB ของคุณ เช่น mongodb://localhost:27017
+path: "/data"  # เส้นทางที่ใช้สำหรับการเก็บไฟล์ (ถ้าจำเป็น)
+uri_api_service: "http://127.0.0.1:8080"  # URL ของบริการ API อื่น ๆ (ถ้ามี)
+authorization_api_service: "Bearer my_token"  # ค่าการรับรองความถูกต้องสำหรับบริการ API อื่น ๆ (ถ้ามี)
+jwt_algorithm: "RS256"  # อัลกอริธึมสำหรับ JWT (ปกติเป็น HS256)
+jwt_signature: ""  # ลายเซ็นที่ใช้สำหรับการสร้าง JWT
+jwt_public_key: |
+-----BEGIN PUBLIC KEY-----
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAss8+3Y/Lp8LmtL7KWyrE
+y6WGzDnZSnvGDgWpqmg6oQYtUFbFI299Zzgr4+SzK/FArf5dUnHGpLGJhh5ns00W
+9N0cvuq8/+3vxXNjZDtqrSIQwMRsYU5iZouOYWULIjLi/2LIWUbRj4ns+GLxDX4k
+uX/E0qv35gfFddPwYh4xDCMXhHGB9MNjami5ujK69nr7utyVQ7LhBeNGwnDKOg0C
+WiKJnKk8BNiRTAZypKxKv87qvB+2sXOffh0FkBnw3H11+2yyhJVTtVHGcNZ0mpsw
+F6HsqitzKK2M9qjDJzsRhV72Tzt8bhs6WJzXU5XkPq+FQMnNZRfGbIxH7ElB0NsB
+ywIDAQAB
+-----END PUBLIC KEY-----
+jwt_private_key: |
+-----BEGIN PRIVATE KEY-----
+MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCyzz7dj8unwua0
+vspbKsTLpYbMOdlKe8YOBamqaDqhBi1QVsUjb31nOCvj5LMr8UCt/l1SccaksYmG
+HmezTRb03Ry+6rz/7e/Fc2NkO2qtIhDAxGxhTmJmi45hZQsiMuL/YshZRtGPiez4
+YvENfiS5f8TSq/fmB8V10/BiHjEMIxeEcYH0w2NqaLm6Mrr2evu63JVDsuEF40bC
+cMo6DQJaIomcqTwE2JFMBnKkrEq/zuq8H7axc59+HQWQGfDcfXX7bLKElVO1UcZw
+1nSamzAXoeyqK3MorYz2qMMnOxGFXvZPO3xuGzpYnNdTleQ+r4VAyc1lF8ZsjEfs
+SUHQ2wHLAgMBAAECggEACWcOoib68qcz/cuW3lcdwodmHAD94upvuc3ASL/ppMQr
+dWf5h7cjNRVhcONWLOrd/FX9ym6OxAi6yfF5OF/9vvj7l1frFDXmVqIOVyUIbIT3
+/Y5tgf1DavROuCv1H9lSv3egrdm22cXvmAhqLrmrCEgdW0HNUEfyMSXotm78bWvx
+DYHXx1HJ2UB8vZ/L2HqoHmG9Rk3SK7acVsC4B3bi+cA/euECrNl7OgsGCxwVqKj/
+T3k3K7QAdht8fF0ud4Fgo+WNAlGVv8+zWFyLSito2E/9QZjrnzyjpJ2Z7tuJ941I
+cqzeW3AVjb3m5zcM2FJsqhaTbAn3SslJ51NwhZqxAQKBgQD6fDodINYDr1KPmX49
+uInCR2eYn/9KbqWzCoMH1/snB25gpnQXvEFVlwZFUZPPZXpnXZ9tiOVh37G8RjMz
+Vv9UfxZfHjZnLx5M614yjf9iBpXBLLfLNF4i2yu3XIjXrm21Sp4Tj6zcUkAIdlyy
+qqZB6elXysUHJNgyFgtaf82NAQKBgQC2vwsau6WtUASN7Qbg0NAg9fglRm4qgSFw
+ydUSFPq6FiPZxpeMc4lnxZRQobHoLrwcOjdwbzQFSuKFkixFwXvOeqFhmmvYKCJb
+PvCLia2bCFpHt4zgEITVeigKM/mnHwRQMOmiNwOrQaUQvuiBdviQ5C9esYeOAsLz
+BVQcKVIyywKBgQD6FIMUx87EGQuNsQqX5qErJY0plTwVfQjUCz+s2ha27bVmq2km
+tV5pbIHnPT4ch01A2/krK80P/Xz+4vuFW2tKWiPkzU41kJZo52jBgoGhxb9IATRy
+nZMKq9UmmS1KYKzJnnjaQMytnzSs/jcobjXVgwrkCt7RdhifUOD+9rArAQKBgB1G
+n73Jn/IS5pfiB/8OFLmjDfzSuqVeiH/sJZE/ASe8kkO6F98tRy7zrR35uWmLyyDu
+hqEhf4D1jTJ+x07pfy8F4EKlnW9EhrR9ccW46bHzdZsVoaDnpJAagL2Zs/387xD1
+tQgCrjjKTGpRWygaahm0JI6T/DZY5OhPyzizufJfAoGAUSLC+MgvtYUfHRJeRT+k
+O+xnV5fP0017ZOUJcczdNaANBbJiGlk3eLpAfIeWx+D0oFDGPdYoE90/O/lysGBe
+NCEU3JtN2rYaNRTpFUyJtFByhInTEMe4VxeR/GtGOIrefUwWdlfcVOlObhdPoTj2
+jPg9D53e+ZVhdcHjLxtpjUs=
+-----END PRIVATE KEY-----
+
